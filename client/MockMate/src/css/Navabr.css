@@ -1,0 +1,33 @@
+.Navbar{ 
+    width: 100%; 
+    height :auto; 
+    background-color: rgb(255, 255, 255) !important; 
+    color: black !important; 
+    border-bottom: 1px black solid; 
+    display: flex; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    font-size: larger; 
+} 
+.image{ 
+    height: 80px; 
+    width: 20%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 10px; 
+} 
+.image img{ 
+    height:200px; 
+} 
+.Navbar a{ 
+    text-decoration: none; 
+    color: black; 
+    opacity: 0.7; 
+    transition: 0.3s; 
+    padding: 30px;
+ } 
+ .Navbar a:hover{ 
+    opacity: 1; 
+    cursor: pointer; 
+}
