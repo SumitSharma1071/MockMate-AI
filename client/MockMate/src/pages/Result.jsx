@@ -8,7 +8,6 @@ export default function Result() {
   const navigate = useNavigate();
 
   const {result, question} = location.state || {}
-  console.log(result, question);
 
   const [ref, inView] = useInView({
     threshold: 0.5,  // 20% element visible

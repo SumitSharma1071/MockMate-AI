@@ -28,9 +28,9 @@ export default function Home(){
                 delay: 0.2,                              // delay before animation starts
             }}
         >
-      <section className="bg-gradient-to-r from-green-500 to-green-800 text-white flex flex-col justify-center items-center h-screen text-center px-4">
+      <section className="bg-gradient-to-r w-[100%] from-green-500 to-green-800 text-black flex flex-col justify-center items-center h-screen text-center px-4">
         <motion.h2
-                    className="text-5xl sm:text-6xl md:text-7xl fonts-style mb-4 text-center"
+                    className="text-3xl sm:text-4xl md:text-6xl fonts-style mb-4 text-center"
                     variants={container}
                     custom={1}
                     initial="hidden"
@@ -45,7 +45,7 @@ export default function Home(){
         <p className="text-lg md:text-2xl mb-6">
           Your AI assistant for smarter learning and mock interviews.
         </p>
-        <button className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition" onClick={() => Navigate('/register')}>
+        <button className="bg-black text-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-slate-900 transition" onClick={() => Navigate('/register')}>
           Get Started
         </button>
       </section>
@@ -86,8 +86,13 @@ export default function Home(){
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white text-center py-6">
-        &copy; 2026 MockMate AI. All rights reserved.
+      <footer className="bg-gray-800 text-white text-center h-96 flex flex-col justify-center items-center">
+          <div className="cpyright">
+             &copy; 2026 MockMate AI. All rights reserved.
+          </div>
+          <div className="item w-full h-3/4 border-2 mt-6">
+
+          </div>
       </footer>
     </div>
         </>

@@ -17,22 +17,22 @@ export default function Navbar({user, setUser}){
                 </div>
 
                 <div className="hidden md:flex justify-start items-center space-x-6 mr-8">
-                    <a href="#" className="hover:text-black-400 cursor-pointer" onClick={() => navigate('/home')}>
+                    <a href="/" className="hover:text-black-400 cursor-pointer" >
                        Home 
                     </a>
                      <a href="#" className="hover:text-black-400 cursor-pointer">
                        About
                     </a>
-                     <a href="#" className="hover:text-black-400 cursor-pointer" onClick={() => navigate('/service')}>
+                     <a href="/service" className="hover:text-black-400 cursor-pointer" >
                        Service
                     </a>
                      <a href="#" className="hover:text-black-400 cursor-pointer">
                        Contact
                     </a>
                     {user ? (
-                        <button onClick={() => navigate('/profile')} className=" bg-slate-500 text-white w-6 h-6 px-6 py-6  rounded-full cursor-pointer flex flex-col justify-center items-center text-2xl">{user.username?.charAt(0).toUpperCase() || "U"}</button>
+                        <button onClick={() => navigate('/profile')} className=" bg-green-700 text-white w-6 h-6 px-6 py-6  rounded-full cursor-pointer flex flex-col justify-center items-center text-2xl">{user.username?.charAt(0).toUpperCase() || "U"}</button>
                     ): (
-                        <button className="bg-green-600 text-white px-4 py-2 rounded cursor-pointer" onClick={() => navigate('/register')}>login</button>
+                       <a className="font-bold" href="/register">Login</a>
                     )}
                 </div>
 
@@ -44,24 +44,24 @@ export default function Navbar({user, setUser}){
             </div>
               {isOpen && ( <div className="md:hidden h-screen pb-5 flex flex-wrap flex-col items-center mx-2">
                  <div className="home cursor-pointer w-2/3 h-10 flex justify-center items-center text-center mt-4 hover:bg-slate-100">
-                     <a href="#" className="hover:text-black-400" onClick={() => navigate('/home')}>Home</a>
+                     <a href="/" className="hover:text-black-400" >Home</a>
                  </div>
                  <div className="about cursor-pointer w-2/3 h-10 flex justify-center items-center text-center mt-4  hover:bg-slate-100">
                     <a href="#" className="block hover:text-black-400">About</a>
                  </div>
                  <div className="service cursor-pointer w-2/3 h-10 flex justify-center items-center text-center mt-4 hover:bg-slate-100">
-                    <a href="#" className="block hover:text-black-400" onClick={() => navigate('/service')}>Services</a>
+                    <a href="/service" className="block hover:text-black-400">Services</a>
                  </div>
                 <div className="contact cursor-pointer w-2/3 h-10 flex justify-center items-center text-center mt-4 hover:bg-slate-100">
                      <a href="#" className="block hover:text-black-400 mx-4">Contact</a>
                 </div>
                 {user ? (
                      <div className="login cursor-pointer w-2/3 h-10 text-center flex justify-center items-center mt-4  hover:bg-slate-100">
-                        <a href="#" className="block hover:text-black-400 mx-4" onClick={() => navigate('/profile')}>{user.username}</a>
+                        <a href="/profile" className="block hover:text-black-400 mx-4">{user.username}</a>
                      </div>
                 ):(
                      <div className="login cursor-pointer w-2/3 h-10 text-center flex justify-center items-center mt-4  hover:bg-slate-100">
-                        <a href="#" className="block hover:text-black-400 mx-4" onClick={() => navigate('/register')}>Login</a>
+                        <a href="/register" className="block hover:text-black-400 mx-4">Login</a>
                     </div>
                 )}
               </div>

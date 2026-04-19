@@ -11,7 +11,7 @@ passport.use(
                 return done(null, false, {message : "User not Found"});
             }
 
-            const isMatch = await user.isValidPassword(password);
+            const isMatch = await user.comparePassword(password); 
 
             if(!isMatch){
                 return done(null, false, {message : "Wrong Password"});
@@ -34,6 +34,5 @@ passport.deserializeUser( async (id, done) =>{
         done(null, user);
     }catch(err){
         done(err);
-        console.log(err);
     }
 });

@@ -20,6 +20,7 @@ router.get("/:topic", isLoggedin, async (req, res) => {
                 - question
                 - examples
                 - answer
+                - hint
                 - testCases (IMPORTANT)
 
                 Format:

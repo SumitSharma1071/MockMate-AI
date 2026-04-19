@@ -71,11 +71,11 @@ export default function Service() {
         initial={{ opacity: 0, y: 40 }}
         transition={{ type: "keyframes", duration : 1.5 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        className="min-h-screen bg-gray-50 flex flex-col items-center pt-32 px-4">
-      <h1 className="text-4xl font-bold mb-10">Our Learning Services</h1>
+        className="min-h-screen bg-slate-900 flex flex-col items-center pt-32 px-4">
+      <h1 className="text-4xl font-bold mb-10 text-white">Our Learning Services</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
         {services.map((service, index) => (
-          <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer "
+          <div className="bg-green-300 shadow-lg rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer "
            key={index} onClick={() => navigate('/category', {state : {category : service.category, topic : service.topic || [], level : service.level || ["Easy", "Medium", "Hard"]}})}>
             <div className="mb-4">{service.icon}</div>
             <h2 className="text-xl font-semibold mb-2">{service.title}</h2>

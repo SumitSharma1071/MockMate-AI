@@ -14,7 +14,6 @@ import Profile from "./pages/Profile";
 export default function App(){
 
   const [user, setUser] = useState(null);
-  console.log(user);
   useEffect(() =>{
              API.get('/auth/me')
             .then(res =>{ 
@@ -29,7 +28,7 @@ export default function App(){
     <>
     <Navbar user={user} setUser={setUser} />
       <Routes>
-        <Route path="/home" element={<Home user={user} setUser={setUser}/>} />
+        <Route path="/" element={<Home user={user} setUser={setUser}/>} />
         <Route path="/register" element={<Register user={user} setUser={setUser} />} />
         <Route path="/service" element={<Service user={user} setUser={setUser}/>}/>
         <Route path="/dsa" element={<DSA/>}/>

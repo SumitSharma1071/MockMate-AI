@@ -30,8 +30,7 @@ export default function Register({user, setUser}) {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from || {pathname : '/home'};
-    console.log(from);
+    const from = location.state?.from || {pathname : '/'};
     useEffect(() =>{
        if(response.show){
          const timer = setTimeout(() =>{
@@ -69,7 +68,7 @@ export default function Register({user, setUser}) {
 
         }catch(err){
            setResponse({
-            message : "Error | Filled the Input Box Properly!",
+            message : err.response?.data?.message || "Signup Failed",
             type : "error",
             show : true
            });

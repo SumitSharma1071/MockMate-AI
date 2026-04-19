@@ -5,20 +5,31 @@ const session = require('express-session');
 
 module.exports.register = wrapAsync(async (req, res, next) =>{
     const {firstname, lastname, username, password, email} = req.body;
+
     const existingUser = await User.findOne({username});
     if(existingUser){
         throw new ExpressError('User already exist', 400);
     }    
+
     const user = new User({firstname, lastname, username, password, email});
     await user.save();
-    res.locals.data = {user};
-    res.status(201).json({
-        success: true,
-        message: 'User registered successfully',
-        user: { id: user._id, username: user.username }
+
+    req.login(user, (err) => {
+        if (err) {
+            return res.status(500).json({ message: "Login after signup failed" }); // ✅ FIX
+        }
+
+        res.status(201).json({
+            success: true,
+            message: 'User registered successfully',
+            user: {
+                id: user._id,
+                username: user.username,
+                firstname: user.firstname
+            }
+        });
     });
 });
-
 module.exports.login = wrapAsync(async(req, res, next) =>{
     const {username, password} = req.body;
     const user = await User.findOne({username});
